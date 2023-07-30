@@ -1,0 +1,19 @@
+{
+  "name": "wedding-app",
+  "version": "1.0.0",
+  "description": "first glance at wedding app",
+  "main": "app.js",
+  "scripts": {
+    "test": "run boa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juaki0315/wedding-app.git"
+  },
+  "author": "juaki0315",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juaki0315/wedding-app/issues"
+  },
+  "homepage": "https://github.com/juaki0315/wedding-app#readme"
+}
