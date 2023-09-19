@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boda PWA - Cuestionario</title>
-  <!-- Agregar los iconos necesarios para PWA -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Boda PWA - Cuestionario</h1>
-  </header>
-  <main>
-    <div id="registrationForm">
-      <h2>Registro</h2>
-      <input type="text" id="nameInput" placeholder="Nombre">
-      <button id="registerBtn">Registrarse</button>
-    </div>
-    <div id="questionnaire" style="display: none;">
-      <h2>Cuestionario</h2>
-      <!-- Agregar aquí las preguntas del cuestionario -->
-      <button id="submitBtn">Enviar</button>
-    </div>
-  </main>
-  <script src="app.js"></script>
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <h1>Registro</h1>
+            <div class="grupo">
+                <input type="text" name="" id="name" ><span class="barra"></span>
+                <label for="">Nombre</label>
+            </div>
+            <div class="grupo">
+                <input type="email" name="" id="email" ><span class="barra"></span>
+                <label for="">Email</label>
+            </div>
+            <div class="grupo">
+                <input type="password" name="" id="password" ><span class="barra"></span>
+                <label for="">Password</label>
+            </div>
+            
+            <button type="submit">Suscribirte</button>
+            <p class="warnings" id="warnings"></p>
+        </div>
+    </form>
+
+    <script src="app.js"></script>
 </body>
 </html>
