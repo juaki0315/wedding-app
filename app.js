@@ -19,49 +19,48 @@ const firebaseConfig = {
   };
   
   // Inicializa Firebase
-  const app = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
   
-form.addEventListener("submit", e=>{
-    e.preventDefault()
-    let warnings = ""
-    let entrar = false
-    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    parrafo.innerHTML = ""
-    if(nombre.value.length <6){
-        warnings += 'El nombre no es valido <br>'
-        entrar = false
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    let warnings = "";
+    let entrar = true;
+    let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    parrafo.innerHTML = "";
+    if (!regexEmail.test(email.value)) {
+        warnings += 'El email no es valido <br>';
+        entrar = false; // Cambia "true" a "false" para evitar entrar en el bloque "else"
     }
-    if(!regexEmail.test(email.value)){
-        warnings += 'El email no es valido <br>'
-        entrar = false
-    }
-    if(pass.value.length < 8){
-        warnings += 'La contraseña no es valida <br>'
-        entrar = false
+   /* if (pass.value.length < 8) {
+        warnings += 'La contraseña no es valida <br>';
+        entrar = false; // Cambia "true" a "false" para evitar entrar en el bloque "else"
+    }*/
+
+    if (pass.value != conf_pass.value) {
+        warnings += 'Las contraseñas no coinciden <br>';
+        entrar = false; // Cambia "true" a "false" para evitar entrar en el bloque "else"
     }
 
-    if(pass.value != conf_pass.value){
-        warnings += 'Las contraseñas no coinciden <br>'
-        entrar = false
-    }
+    if (entrar) {
+        parrafo.innerHTML = warnings;
+    } else {
+        parrafo.innerHTML = "Enviado";
+        // Obtén los valores de email y pass
+        const userEmail = email.value;
+        const userPass = pass.value;
 
-    if(!entrar){
-        parrafo.innerHTML = warnings
-    }else{
-        parrafo.innerHTML = "Enviado"
         // Registra un usuario con correo electrónico y contraseña
-        firebase.auth().createUserWithEmailAndPassword(email, pass)
+        firebase.auth().createUserWithEmailAndPassword(userEmail, userPass)
         .then((userCredential) => {
-        // Registro exitoso
+            // Registro exitoso
             const user = userCredential.user;
             console.log("Usuario registrado:", user);
         })
-        /*.catch((error) => {
-        // Hubo un error en el registro
+        .catch((error) => {
+            // Hubo un error en el registro
             const errorCode = error.code;
             const errorMessage = error.message;
             console.error("Error al registrar usuario:", errorMessage);
-        });*/
-
+        });
     }
-})
+});

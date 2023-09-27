@@ -13,11 +13,11 @@
 
 body {
     font-family: 'Roboto';
-    background: #4568DC;
+    background: #49454567;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    background: -webkit-linear-gradient(to right, #fcbd0f, #F13030);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #B06AB3, #4568DC);
+    background: linear-gradient(to right, #fcbd0f, #F13030);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 750px;
     display: flex;
@@ -79,7 +79,7 @@ input:focus~label,
 input:valid~label{
     top: -14px;
     font-size: 12px;
-    color: #2196f3;
+    color: #49454567;
 }
 
 .barra{
@@ -94,7 +94,7 @@ input:valid~label{
     width: 0%;
     bottom: 0;
     position: absolute;
-    background: linear-gradient(to right, #B06AB3, #4568DC);
+    background: linear-gradient(to right, #fcbd0f, #F13030);
     transition: 0.3s ease width;
     left: 0;
 }
@@ -113,11 +113,11 @@ input:focus~.barra::before{
 
 button{
     font-family: 'roboto';
-    background: #4568DC;
+    background: #49454567;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+    background: -webkit-linear-gradient(to right, #fcbd0f, #F13030);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #B06AB3, #4568DC);
+    background: linear-gradient(to right, #fcbd0f, #F13030);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: none;
     display: block;
